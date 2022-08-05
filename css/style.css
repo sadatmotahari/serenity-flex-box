@@ -1,9 +1,12 @@
-@import url(reset.css);
-@import url(font-face.css);
-@import url(fontawesome.css);
-@import url(brands.css);
-@import url(solid.css);
+@import "reset.css";
+@import "font-face.css";
+@import "fontawesome.css";
+@import "brands.css";
+@import "solid.css";
 
+*{
+    box-sizing: border-box;
+}
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -83,7 +86,7 @@ h2{
     text-decoration: underline;
 }
 .hero-section{
-    background: url(/assets/images/tree-forest-road.jpg);
+    background: url(../assets/images/tree-forest-road.jpg);
     max-width: 100%;
     height: 100vh;
     background-size: cover;
@@ -132,7 +135,7 @@ h2{
 }
 .feature-boxes{
     text-align: center;
-    max-width: 30%;
+    max-width: 300px;
     box-shadow: 0 1px 9px 0 rgb(0 0 0 / 19%);
     margin: 5px 5px 70px 5px;
     padding: 5px 10px;
@@ -162,7 +165,7 @@ margin: 24px 0;
     margin: 0 auto;
 }
 .member{
-    max-width: 32%;
+    width: 320px;
     box-shadow: 0 1px 9px 0 rgb(0 0 0 / 19%);
     margin: 5px;
 }
@@ -204,7 +207,7 @@ margin: 24px 0;
     margin: 20px 0 80px;
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    max-width: 30%;
+    max-width: 300px;
     padding: 30px 15px;
     position: relative;
 }
@@ -287,10 +290,10 @@ margin: 24px 0;
     padding-bottom: 30px;
 }
 .trusted-brands .images img{
-    max-width: 16%;
+    max-width: 160px;
 }
 .start-growing{
-    background: url(/assets/images/bg-cta.jpeg);
+    background: url(../assets/images/bg-cta.jpeg);
     background-size: cover;
     height: 65vh;
     display: flex;
@@ -474,6 +477,45 @@ max-width: 60%;
     font-size: 25px;
     display: none;
     margin-left: 10px;
+}
+.hamburger{
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    padding-top: 40px;
+    height: 50%;
+    position: fixed;
+    top: 60;
+    left: 10;
+    display: none;
+    background: #fff;
+    line-height: 2;
+    animation-name: move;
+    animation-duration: 1s;
+}
+.hamburger ul li a{
+    color: #000;
+    opacity: 50%;
+    transition: all .5s;
+}
+.hamburger ul li a:hover{
+    opacity: 100%;
+}
+.hamburger.show{
+    display: block;
+}
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    80%{
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 @media screen and (max-width:1100px){
     .hero-text h1{
