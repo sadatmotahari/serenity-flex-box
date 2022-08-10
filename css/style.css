@@ -49,11 +49,14 @@ h2{
     color: #fff;
 }
 .header{
-    background: #fff;
     padding: 20px;
     position: fixed;
     width: 100%;
     z-index: 10;
+    transition: all .5s;
+}
+.header.sticky{
+    background-color: #fff;
 }
 .header .top-header{
     display: flex;

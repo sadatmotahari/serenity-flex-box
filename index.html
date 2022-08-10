@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="header">
+        <div id="header" class="header">
             <div class="container top-header">
                 <div class="logo">
                     <h2>آرامش</h2>
@@ -41,7 +41,7 @@
             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
             <div class="button-section">
                 <div class="button button-primary">دانلود</div>
-            <div class="button">مطالعه بیشتر</div>
+                <div class="button">مطالعه بیشتر</div>
             </div>
             </div>
         </div>
@@ -350,8 +350,25 @@
             </div>
         </div>
         <script>
+            var menuHamburger = document.getElementById("hamburger");
             function showMenu() {
-                document.getElementById("hamburger").classList.add("show");
+                menuHamburger.classList.toggle("show");
+            }
+            document.addEventListener("scroll" , func)
+            function func(){
+                var header = document.getElementById("header");
+                if (window.scrollY>20){
+                header.classList.add("sticky")
+                }else{
+                    header.classList.remove("sticky")
+                }
+            }
+            window.addEventListener("resize" , hamburger);
+            function hamburger (){
+                if (window.innerWidth>650){
+                    menuHamburger.classList.remove("show");
+                }
+
             }
         </script>
     </body>
